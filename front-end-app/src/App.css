@@ -36,3 +36,46 @@
     transform: rotate(360deg);
   }
 }
+
+.Card {
+  background-color: lightgray;
+  max-width: 60vw;
+  border-radius: 2%;
+  max-height: 75vh;
+  padding: 10px;
+}
+
+.Inner-card {
+  background-color: darkgray;
+  max-width: 55vw;
+  padding: 10px;
+  border-color: #696a6b;
+  border-style: solid;
+  border-width: 1px;
+  margin-bottom: 20px;
+}
+
+.Table {
+  background-color: #4f5052;
+  max-width: 50vw;
+}
+
+.Table-header {
+  background-color: lightgray;
+}
+
+.Table-cell {
+  background-color: white;
+}
+
+.Form-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: white;
+  margin-top: 10px;
+  max-width: 32.5%;
+  padding: 5px;
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
+  border-radius: 2%;
+}
