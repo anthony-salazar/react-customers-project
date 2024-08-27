@@ -8,14 +8,14 @@ function CustomerList(props) {
         <div className='Inner-card'>
         <h1>Customer List</h1>
         <table className='Table'>
-          <thead >
-            <tr >
+          <thead className="Table-row" >
+            <tr>
               <th className='Table-header'>Name</th>
               <th className='Table-header'>Email</th>
               <th className='Table-header'>Password</th>
             </tr>
           </thead>
-          <tbody >
+          <tbody className='Table-row'>
             {props.customers.map((customer) => {
               return (
                 <tr onClick={() => props.handleClick(customer)} id={customer.id}>

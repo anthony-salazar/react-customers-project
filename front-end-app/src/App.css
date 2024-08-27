@@ -38,10 +38,11 @@
 }
 
 .Card {
+  display: flex;
+  flex-direction: column;
   background-color: lightgray;
   max-width: 60vw;
   border-radius: 2%;
-  max-height: 75vh;
   padding: 10px;
 }
 
@@ -53,19 +54,27 @@
   border-style: solid;
   border-width: 1px;
   margin-bottom: 20px;
+  overflow: auto;
 }
 
 .Table {
-  background-color: #4f5052;
-  max-width: 50vw;
+  display: block;
+  max-width: 90%;
+  border-spacing: 0;
 }
 
 .Table-header {
+
   background-color: lightgray;
+  border-color: #696a6b;
+  border-style: solid;
 }
 
 .Table-cell {
+
   background-color: white;
+  border-color: #696a6b;
+  border-style: solid;
 }
 
 .Form-buttons {
@@ -73,7 +82,7 @@
   justify-content: space-evenly;
   background-color: white;
   margin-top: 10px;
-  max-width: 32.5%;
+  max-width: 35vw;
   padding: 5px;
   padding-top: 7.5px;
   padding-bottom: 7.5px;
