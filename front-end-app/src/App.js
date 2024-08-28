@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
-import {get, getAll, deleteById, post, put} from './memdb'
+import {get, getAll, deleteById, post, put} from './restdb'
 import CustomerList from './CustomerList';
 import CustomerAddUpdateForm from './CustomerAddUpdateForm';
 
@@ -16,17 +16,17 @@ function App() {
       setSelected(customer)
     }
   }
-  const getCustomers = function() {
-    setCustomers(getAll())
+  const getCustomers = function(setCustomers) {
+    getAll(setCustomers);
   }
   const handleRefresh = () => {setRefresh(!refreshCustomers)}
   
-  useEffect(getCustomers, refreshCustomers);
+  useEffect(() => getCustomers(setCustomers), [refreshCustomers]);
   return ( 
     <div>
     <div className='Card'>
       <CustomerList customers={customers} selected={selected} handleClick={handleRowClicked} />
-      <CustomerAddUpdateForm selected={selected} setSelected={setSelected} handleRefresh={handleRefresh}/>
+      <CustomerAddUpdateForm setCustomers={setCustomers} selected={selected} setSelected={setSelected} handleRefresh={handleRefresh}/>
     </div>
     </div>
   );

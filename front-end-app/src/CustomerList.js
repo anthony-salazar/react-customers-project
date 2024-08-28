@@ -1,7 +1,6 @@
 import {useState, useEffect } from "react";
 
 function CustomerList(props) {
-    console.log(props);
     const [internalSelected, setSelected] = useState(props.selected);
     useEffect(() => setSelected(props.selected), [props.selected]);
     return (

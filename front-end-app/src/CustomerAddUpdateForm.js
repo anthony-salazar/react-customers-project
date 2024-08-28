@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import {get, getAll, deleteById, post, put} from './memdb'
+import {get, getAll, deleteById, post, put} from './restdb'
 
 function CustomerAddUpdateForm(props) {
     const [internalSelected, setInternalSelected] = useState({id: -1, name: "", email: "", password: ""})
@@ -13,7 +13,7 @@ function CustomerAddUpdateForm(props) {
     }
     const handleDelete = () => {
         if (internalSelected.id !== -1) {
-          deleteById(internalSelected.id)
+          deleteById(internalSelected.id, props.setCustomers)
           props.setSelected({id: -1, name: "", email: "", password: ""})
           props.handleRefresh()
         }
@@ -21,10 +21,10 @@ function CustomerAddUpdateForm(props) {
     const handleSave = () => {
         if (internalSelected.id === -1) {
           if (internalSelected.name && internalSelected.email && internalSelected.password) {
-            post(internalSelected)
+            post(internalSelected, props.setCustomers)
           }
         } else {
-          put(internalSelected.id, internalSelected)
+          put(internalSelected.id, internalSelected, props.setCustomers)
         }
         props.handleRefresh()
         props.setSelected({id: -1, name: "", email: "", password: ""})
