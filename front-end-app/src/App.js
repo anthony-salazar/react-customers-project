@@ -25,7 +25,7 @@ function App() {
   return ( 
     <div>
     <div className='Card'>
-      <CustomerList customers={customers} selected={selected} handleClick={handleRowClicked} />
+      <CustomerList customers={customers} selected={selected} handleClick={handleRowClicked} setCustomers={setCustomers} setSelected={setSelected} refresh={refreshCustomers}/>
       <CustomerAddUpdateForm setCustomers={setCustomers} selected={selected} setSelected={setSelected} handleRefresh={handleRefresh}/>
     </div>
     </div>
