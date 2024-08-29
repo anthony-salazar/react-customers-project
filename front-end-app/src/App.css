@@ -40,14 +40,14 @@
 .Card {
   display: flex;
   flex-direction: column;
-  background-color: lightgray;
+  background-color: rgb(65, 89, 226);
   max-width: 60vw;
   border-radius: 2%;
   padding: 10px;
 }
 
 .Inner-card {
-  background-color: darkgray;
+  background-color: white;
   max-width: 55vw;
   padding: 10px;
   border-color: #696a6b;
@@ -109,4 +109,10 @@
   margin-right: 2%;
   margin-top: 1%;
   margin-bottom: 1%;
+}
+
+.Form-navigation {
+  padding-bottom: 2%;
+  display: flex;
+  justify-content: space-evenly;
 }

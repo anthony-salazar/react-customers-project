@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import {get, getAll, deleteById, post, put} from './restdb'
 import CustomerList from './CustomerList';
 import CustomerAddUpdateForm from './CustomerAddUpdateForm';
+import { Route, BrowserRouter as Router, Routes, useNavigate, Link } from 'react-router-dom';
 
 function App() {
   const [refreshCustomers, setRefresh] = useState(false);
@@ -20,15 +21,22 @@ function App() {
     getAll(setCustomers);
   }
   const handleRefresh = () => {setRefresh(!refreshCustomers)}
-  
+  //const navigate = useNavigate();
+
   useEffect(() => getCustomers(setCustomers), [refreshCustomers]);
   return ( 
-    <div>
-    <div className='Card'>
-      <CustomerList customers={customers} selected={selected} handleClick={handleRowClicked} setCustomers={setCustomers} setSelected={setSelected} refresh={refreshCustomers}/>
-      <CustomerAddUpdateForm setCustomers={setCustomers} selected={selected} setSelected={setSelected} handleRefresh={handleRefresh}/>
-    </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path='' element = {
+            <CustomerList customers={customers} selected={selected} handleClick={handleRowClicked} setCustomers={setCustomers} setSelected={setSelected} refresh={refreshCustomers}/>
+        }>
+        </Route>
+        <Route path='/form/' element = {
+            <CustomerAddUpdateForm setCustomers={setCustomers} selected={selected} setSelected={setSelected} handleRefresh={handleRefresh}/>
+        }>
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 

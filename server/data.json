@@ -1,12 +1,6 @@
 {
   "customers": [
     {
-      "id": 4,
-      "name": "Westbrooke Jaram",
-      "email": "wjaram3@php.org",
-      "password": "oZ1>GuDc"
-    },
-    {
       "id": 5,
       "name": "Benny Brittle",
       "email": "bbrittle4@alexa.com",
@@ -5981,6 +5975,18 @@
       "name": "Sigismondo Newbury",
       "email": "snewburyrr@unicef.org",
       "password": "sM1$REyzm2ygm"
+    },
+    {
+      "id": 1001,
+      "name": "Johnathan Test",
+      "email": "jtest@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": 1002,
+      "name": "Try Again",
+      "email": "t@again.com",
+      "password": "ttt"
     }
   ]
 }
